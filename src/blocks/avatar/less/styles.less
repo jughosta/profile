@@ -2,16 +2,16 @@
 
 .avatar {
 	display: inline-block;
+	overflow: hidden;
 	width: @avatar-size;
 	height: @avatar-size;
+	opacity: .8;
+	border-radius: 50%;
 	background: url('@{CDN}avatar/images/jughosta.png') no-repeat;
 	background-size: @avatar-size @avatar-size;
-	overflow: hidden;
-	border-radius: 50%;
-	opacity: 0.8;
-	transition: opacity ease-out 0.5s;
-	cursor: pointer;
 	box-shadow: inset 0 0 10px 0 rgba(255, 255, 255, 1);
+	transition: opacity ease-out .5s;
+	cursor: pointer;
 
 	&:active,
 	&:hover {

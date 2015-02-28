@@ -1,6 +1,6 @@
 @profile-color: rgba(62, 45, 56, 1);
-@profile-summary-color: rgba(62, 45, 56, 0.5);
-@profile-description-color: rgba(62, 45, 56, 0.75);
+@profile-summary-color: rgba(62, 45, 56, .5);
+@profile-description-color: rgba(62, 45, 56, .75);
 @profile-avatar-size: 600px;
 
 .profile {
@@ -9,9 +9,9 @@
 
 .profile__layers {
 	position: relative;
+	left: 50%;
 	width: @profile-avatar-size;
 	height: @profile-avatar-size;
-	left: 50%;
 	margin-left: -@profile-avatar-size/2;
 }
 
@@ -27,9 +27,9 @@
 	}
 
 	&--avatar {
-		z-index: 3;
 		top: @profile-avatar-size / 2 - @avatar-size / 2 + 1px;
 		left: @profile-avatar-size / 2 - @avatar-size / 2 + 1px;
+		z-index: 3;
 		width: @avatar-size;
 		height: @avatar-size;
 	}
@@ -50,6 +50,6 @@
 }
 
 .profile__summary {
-	font-size: 14px;
 	color: @profile-summary-color;
+	font-size: 14px;
 }

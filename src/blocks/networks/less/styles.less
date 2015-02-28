@@ -2,13 +2,14 @@
 @networks-color: rgba(62, 45, 56, 1);
 
 @font-face {
-	font-family: 'FontAwesome';
 	src: url('lib/font-awesome/fontawesome-webfont.eot?v=4.3.0');
 	src: url('lib/font-awesome/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'),
 	url('lib/font-awesome/fontawesome-webfont.woff2?v=4.3.0') format('woff2'),
 	url('lib/font-awesome/fontawesome-webfont.woff?v=4.3.0') format('woff'),
 	url('lib/font-awesome/fontawesome-webfont.ttf?v=4.3.0') format('truetype'),
 	url('lib/font-awesome/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+
+	font-family: 'FontAwesome';
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,25 +24,22 @@
 	vertical-align: top;
 	width: @networks-item-size;
 	height: @networks-item-size;
-	padding: @networks-item-size / 2;
 	margin: 0 @networks-item-size / 4;
-	background-repeat: no-repeat;
-	background-size: @networks-item-size @networks-item-size;
-	opacity: 0.5;
-	transition: opacity ease-out 0.5s;
-
+	padding: @networks-item-size / 2;
+	color: @networks-color;
 	font: normal normal normal 14px/1 FontAwesome;
 	font-size: @networks-item-size;
+	text-decoration: none;
 	text-rendering: auto;
+	opacity: .5;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-size: @networks-item-size @networks-item-size;
+	transition: all ease-out .5s;
+	transform: translate(0, 0);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	transform: translate(0, 0);
-
-	color: @networks-color;
-	text-decoration: none;
-
-	border-radius: 50%;
-	border: 1px solid transparent;
 
 	&:visited,
 	&:hover {
@@ -56,38 +54,38 @@
 	}
 
 	&--facebook:before {
-		content: "\f09a";
+		content: '\f09a';
 	}
 
 	&--twitter:before {
-		content: "\f099";
+		content: '\f099';
 	}
 
 	&--instagram:before {
-		content: "\f16d";
+		content: '\f16d';
 	}
 
 	&--tumblr:before {
-		content: "\f173";
+		content: '\f173';
 	}
 
 	&--linkedin:before {
-		content: "\f0e1";
+		content: '\f0e1';
 	}
 
 	&--google:before {
-		content: "\f0d5";
+		content: '\f0d5';
 	}
 
 	&--mail:before {
-		content: "\f003";
+		content: '\f003';
 	}
 
 	&--skype:before {
-		content: "\f17e";
+		content: '\f17e';
 	}
 
 	&--github:before {
-		content: "\f09b";
+		content: '\f09b';
 	}
 }
