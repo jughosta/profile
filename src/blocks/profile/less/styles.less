@@ -1,0 +1,55 @@
+@profile-color: rgba(62, 45, 56, 1);
+@profile-summary-color: rgba(62, 45, 56, 0.5);
+@profile-description-color: rgba(62, 45, 56, 0.75);
+@profile-avatar-size: 600px;
+
+.profile {
+	text-align: center;
+}
+
+.profile__layers {
+	position: relative;
+	width: @profile-avatar-size;
+	height: @profile-avatar-size;
+	left: 50%;
+	margin-left: -@profile-avatar-size/2;
+}
+
+.profile__layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: @profile-avatar-size;
+	height: @profile-avatar-size;
+
+	&--colors {
+		z-index: 2;
+	}
+
+	&--avatar {
+		z-index: 3;
+		top: @profile-avatar-size / 2 - @avatar-size / 2 + 1px;
+		left: @profile-avatar-size / 2 - @avatar-size / 2 + 1px;
+		width: @avatar-size;
+		height: @avatar-size;
+	}
+}
+
+.profile__data {
+	max-width: @profile-avatar-size;
+	margin: -3em auto 0 auto;
+	font-family: verdana, sans-serif;
+}
+
+.profile__name {
+	color: @profile-color;
+}
+
+.profile__description {
+	color: @profile-description-color;
+}
+
+.profile__summary {
+	font-size: 14px;
+	color: @profile-summary-color;
+}

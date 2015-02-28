@@ -1,0 +1,93 @@
+@networks-item-size: 20px;
+@networks-color: rgba(62, 45, 56, 1);
+
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('lib/font-awesome/fontawesome-webfont.eot?v=4.3.0');
+	src: url('lib/font-awesome/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'),
+	url('lib/font-awesome/fontawesome-webfont.woff2?v=4.3.0') format('woff2'),
+	url('lib/font-awesome/fontawesome-webfont.woff?v=4.3.0') format('woff'),
+	url('lib/font-awesome/fontawesome-webfont.ttf?v=4.3.0') format('truetype'),
+	url('lib/font-awesome/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.networks {
+	margin: 1em auto;
+	text-align: center;
+}
+
+.networks__item {
+	display: inline-block;
+	vertical-align: top;
+	width: @networks-item-size;
+	height: @networks-item-size;
+	padding: @networks-item-size / 2;
+	margin: 0 @networks-item-size / 4;
+	background-repeat: no-repeat;
+	background-size: @networks-item-size @networks-item-size;
+	opacity: 0.5;
+	transition: opacity ease-out 0.5s;
+
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: @networks-item-size;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
+
+	color: @networks-color;
+	text-decoration: none;
+
+	border-radius: 50%;
+	border: 1px solid transparent;
+
+	&:visited,
+	&:hover {
+		color: @networks-color;
+		text-decoration: none;
+	}
+
+	&:hover,
+	&:active {
+		opacity: 1;
+		border-color: @networks-color;
+	}
+
+	&--facebook:before {
+		content: "\f09a";
+	}
+
+	&--twitter:before {
+		content: "\f099";
+	}
+
+	&--instagram:before {
+		content: "\f16d";
+	}
+
+	&--tumblr:before {
+		content: "\f173";
+	}
+
+	&--linkedin:before {
+		content: "\f0e1";
+	}
+
+	&--google:before {
+		content: "\f0d5";
+	}
+
+	&--mail:before {
+		content: "\f003";
+	}
+
+	&--skype:before {
+		content: "\f17e";
+	}
+
+	&--github:before {
+		content: "\f09b";
+	}
+}
