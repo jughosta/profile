@@ -1,6 +1,6 @@
 {
 	"name": "jughosta-profile",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Profile of Julia Rechkunova (@jughosta)",
 	"repository": {
 		"type": "git",
@@ -10,9 +10,7 @@
 	"dependencies": {
 		"csstime-gulp-tasks": "^1.3.1",
 		"font-awesome": "^4.3.0",
-		"gulp": "^3.8.11",
-		"jscs": "^1.11.3",
-		"jslint": "^0.9.0-pre002"
+		"gulp": "^3.8.11"
 	},
 	"engines": {
 		"node": ">=0.10"
@@ -23,5 +21,9 @@
 		"debug": "./node_modules/.bin/gulp debug",
 		"test": "npm run lint",
 		"lint": "./node_modules/.bin/jshint ./ && ./node_modules/.bin/jscs ./"
+	},
+	"devDependencies": {
+		"jscs": "^1.11.3",
+		"jshint": "^2.6.2"
 	}
 }

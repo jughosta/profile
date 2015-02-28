@@ -13,7 +13,8 @@ csstime.loadGulpTasks({
 	cdnPath: 'blocks/',
 	destinationDir: path.join('..', DEST_DIR),
 	temporaryDir: path.join('..', DEST_DIR, '__tmp'),
-	componentsDir: 'blocks'
+	componentsDir: 'blocks',
+	componentsRootDir: 'src'
 });
 
 gulp.task('publish-font-awesome', function () {
