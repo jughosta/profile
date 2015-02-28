@@ -9,7 +9,8 @@
 		w.document.addEventListener('DOMContentLoaded', onLoad);
 	}
 
-	var snap, oddCircles, evenCircles;
+	var minaValues = ['elastic', 'bounce', 'easeinout'],
+		snap, oddCircles, evenCircles;
 
 	function onLoad () {
 		snap = Snap.select('#js-snap-colors');
@@ -22,16 +23,29 @@
 	function animate () {
 		var r = getRandomNumber(60, 120),
 			duration = 1000 + getRandomNumber(300, 500),
-			easing = mina.backout,
+			easing = mina[minaValues[getRandomNumber(0, minaValues.length)]],
+			direction = (Math.random() > 0.5) ? 1 : -1,
+			scale = 's1.2,1.2',
 			center = ',300,300';
-		oddCircles.animate({transform: 'r' + r + center}, duration, easing, function () {
-			oddCircles.animate({transform: 'r0' + center}, duration, easing);
-		});
-		evenCircles.animate({transform: 'r-' + r + center}, duration + r, easing, function () {
-			evenCircles.animate({transform: 'r0' + center}, duration, easing, function () {
-				setTimeout(animate, 3000);
+
+		oddCircles.animate(
+			{transform: 'r' + (-r * direction) + center},
+			duration, easing,
+			function () {
+				oddCircles.animate({transform: 'r0' + center}, duration, easing);
 			});
-		});
+
+		evenCircles.animate(
+			{transform: 'r' + r * direction + center + scale},
+			duration, easing,
+			function () {
+				evenCircles.animate(
+					{transform: 'r0' + center + 's1,1'},
+					duration, easing,
+					function () {
+						setTimeout(animate, 3000);
+					});
+			});
 	}
 
 	function hasSVG () {
