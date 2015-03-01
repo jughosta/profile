@@ -27,17 +27,7 @@ gulp.task('publish-font-awesome', function () {
 		.pipe(gulp.dest(path.join(DEST_LIBS_DIR, 'font-awesome')));
 });
 
-gulp.task('publish-snapsvg', function () {
-	return gulp.src(path.join(
-			NODE_MODULES_DIR,
-			'snapsvg',
-			'dist',
-			'snap.svg-min.js'
-		))
-		.pipe(gulp.dest(path.join(DEST_LIBS_DIR, 'snapsvg')));
-});
-
-gulp.task('publish-libs', ['publish-font-awesome', 'publish-snapsvg']);
+gulp.task('publish-libs', ['publish-font-awesome']);
 
 gulp.task('watch', ['publish-libs', 'csstime-mode-watch']);
 gulp.task('debug', ['publish-libs', 'csstime-mode-debug']);
