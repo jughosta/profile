@@ -8,7 +8,7 @@ var NODE_MODULES_DIR = 'node_modules',
 	DEST_DIR = 'build',
 	DEST_LIBS_DIR = path.join(DEST_DIR, 'lib');
 
-csstime.loadGulpTasks({
+csstime.loadGulpTasks(gulp, {
 	publicRootDir: 'src',
 	cdnPath: 'blocks/',
 	destinationDir: path.join('..', DEST_DIR),
