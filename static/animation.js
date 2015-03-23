@@ -8,7 +8,8 @@
 	var circles = document.getElementsByTagName('circle'),
 		animationDelay = 15000,
 		pauseDelay = 5000,
-		itemDelay = 30;
+		itemDelay = 30,
+		maxIterations = 10;
 
 	document.addEventListener('DOMContentLoaded', function () {
 		setTimeout(animation, 1000);
@@ -18,13 +19,20 @@
 	 * Animation loop
 	 */
 	function animation () {
-		snabbt(circles, {
+		var appearingConfig = {
 			position: handleTargetPosition,
 			delay: handleTargetDelay,
 			easing: 'spring',
 			springConstant: 0.3,
 			springDeceleration: 0.8
-		}).then({
+		};
+
+		if (maxIterations-- === 0) {
+			snabbt(circles, appearingConfig);
+			return;
+		}
+
+		snabbt(circles, appearingConfig).then({
 			position: handleOutsidePosition,
 			delay: handleOutsideDelay,
 			easing: 'easeIn'
