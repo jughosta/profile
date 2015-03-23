@@ -1,6 +1,6 @@
 {
 	"name": "jughosta-profile",
-	"version": "1.6.0",
+	"version": "1.7.0",
 	"description": "Profile of Julia Rechkunova (@jughosta)",
 	"repository": {
 		"type": "git",
@@ -8,9 +8,10 @@
 	},
 	"author": "Julia Rechkunova <julia.rechkunova@gmail.com>",
 	"dependencies": {
-		"csstime-gulp-tasks": "^2.0.1",
+		"csstime-gulp-tasks": "^3.0.1",
 		"font-awesome": "^4.3.0",
-		"gulp": "^3.8.11"
+		"gulp": "^3.8.11",
+		"snabbt.js": "^0.4.0"
 	},
 	"engines": {
 		"node": ">=0.10"
