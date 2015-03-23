@@ -1,4 +1,6 @@
 (function () {
+	'use strict';
+
 	if (!('addEventListener' in document)) {
 		return;
 	}
