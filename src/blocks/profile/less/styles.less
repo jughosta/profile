@@ -9,9 +9,10 @@
 
 .profile__layers {
 	position: relative;
+	top: -50px;
 	left: 50%;
 	width: @profile-avatar-size;
-	height: @profile-avatar-size;
+	height: @profile-avatar-size - 150px;
 	margin-left: -@profile-avatar-size/2;
 }
 
@@ -36,10 +37,12 @@
 }
 
 .profile__data {
-	max-width: @profile-avatar-size;
-	margin: -3em auto 0 auto;
-	padding: 1em;
+	position: relative;
+	z-index: 3;
 	box-sizing: border-box;
+	max-width: @profile-avatar-size;
+	margin: 0 auto;
+	padding: 1em;
 	font-family: verdana, sans-serif;
 }
 
