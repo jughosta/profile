@@ -1,5 +1,5 @@
-@networks-item-size: 20px;
-@networks-color: rgb(51, 51, 51);
+$networks-item-size: 20px;
+$networks-color: rgb(51, 51, 51);
 
 @font-face {
 	src: url('lib/font-awesome/fontawesome-webfont.eot?v=4.3.0');
@@ -22,20 +22,20 @@
 .networks__item {
 	display: inline-block;
 	vertical-align: top;
-	width: @networks-item-size;
-	height: @networks-item-size;
-	margin: 0 @networks-item-size / 4;
-	padding: @networks-item-size / 2;
-	color: @networks-color;
+	width: $networks-item-size;
+	height: $networks-item-size;
+	margin: 0 $networks-item-size / 4;
+	padding: $networks-item-size / 2;
+	color: $networks-color;
 	font: normal normal normal 14px/1 FontAwesome;
-	font-size: @networks-item-size;
+	font-size: $networks-item-size;
 	text-decoration: none;
 	text-rendering: auto;
 	opacity: .5;
 	border: 1px solid transparent;
 	border-radius: 50%;
 	background-repeat: no-repeat;
-	background-size: @networks-item-size @networks-item-size;
+	background-size: $networks-item-size $networks-item-size;
 	transition: opacity ease-out .5s, border ease-out .5s;
 	transform: translate(0, 0);
 	-webkit-font-smoothing: antialiased;
@@ -43,14 +43,14 @@
 
 	&:visited,
 	&:hover {
-		color: @networks-color;
+		color: $networks-color;
 		text-decoration: none;
 	}
 
 	&:hover,
 	&:active {
 		opacity: 1;
-		border-color: @networks-color;
+		border-color: $networks-color;
 	}
 
 	&--codepen:before {
@@ -65,24 +65,8 @@
 		content: '\f16d';
 	}
 
-	&--tumblr:before {
-		content: '\f173';
-	}
-
 	&--linkedin:before {
 		content: '\f0e1';
-	}
-
-	&--google:before {
-		content: '\f0d5';
-	}
-
-	&--mail:before {
-		content: '\f003';
-	}
-
-	&--skype:before {
-		content: '\f17e';
 	}
 
 	&--github:before {

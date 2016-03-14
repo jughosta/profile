@@ -1,30 +1,30 @@
 {
-	"name": "jughosta-profile",
-	"version": "1.7.2",
-	"description": "Profile of Julia Rechkunova (@jughosta)",
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:JuliaRechkunova/profile.git"
-	},
-	"author": "Julia Rechkunova <julia.rechkunova@gmail.com>",
-	"dependencies": {
-		"csstime-gulp-tasks": "^3.0.1",
-		"font-awesome": "^4.3.0",
-		"gulp": "^3.8.11",
-		"snabbt.js": "^0.5.6"
-	},
-	"engines": {
-		"node": ">=0.10"
-	},
-	"scripts": {
-		"start": "npm run release",
-		"release": "./node_modules/.bin/gulp release",
-		"debug": "./node_modules/.bin/gulp debug",
-		"test": "npm run lint",
-		"lint": "./node_modules/.bin/jshint ./ && ./node_modules/.bin/jscs ./"
-	},
-	"devDependencies": {
-		"jscs": "^1.11.3",
-		"jshint": "^2.6.2"
-	}
+  "name": "jughosta-profile",
+  "version": "1.8.0",
+  "description": "Julia Rechkunova (@jughosta)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:JuliaRechkunova/profile.git"
+  },
+  "author": "Julia Rechkunova <julia.rechkunova@gmail.com>",
+  "dependencies": {
+    "csstime-gulp-tasks": "^6.0.0",
+    "font-awesome": "^4.3.0",
+    "gulp": "^3.8.11",
+    "snabbt.js": "^0.5.6"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "start": "npm run release",
+    "release": "./node_modules/.bin/gulp release",
+    "debug": "./node_modules/.bin/gulp debug",
+    "test": "npm run lint",
+    "lint": "./node_modules/.bin/jshint ./ && ./node_modules/.bin/jscs ./"
+  },
+  "devDependencies": {
+    "jscs": "^1.11.3",
+    "jshint": "^2.6.2"
+  }
 }

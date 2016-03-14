@@ -9,12 +9,7 @@ var NODE_MODULES_DIR = 'node_modules',
 	DEST_LIBS_DIR = path.join(DEST_DIR, 'lib');
 
 csstime.loadGulpTasks(gulp, {
-	publicRootDir: 'src',
-	cdnPath: 'blocks/',
-	destinationDir: path.join('..', DEST_DIR),
-	temporaryDir: path.join('..', DEST_DIR, '__tmp'),
-	componentsDir: 'blocks',
-	componentsRootDir: 'src'
+	preprocessor: 'sass'
 });
 
 gulp.task('publish-font-awesome', function () {

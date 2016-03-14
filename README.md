@@ -1,2 +1,2 @@
 # profile
-Website of Julia Rechkunova (@jughosta)
+Julia Rechkunova (@jughosta)

@@ -7,12 +7,12 @@
 
 	var circles = document.getElementsByTagName('circle'),
 		animationDelay = 15000,
-		pauseDelay = 5000,
+		pauseDelay = 3000,
 		itemDelay = 30,
-		maxIterations = 10;
+		maxIterations = 1;
 
 	document.addEventListener('DOMContentLoaded', function () {
-		setTimeout(animation, 1000);
+		setTimeout(animation, 2000);
 	});
 
 	/**
@@ -28,11 +28,10 @@
 		};
 
 		if (maxIterations-- === 0) {
-			snabbt(circles, appearingConfig);
 			return;
 		}
 
-		snabbt(circles, appearingConfig).then({
+		snabbt(circles, appearingConfig).snabbt({
 			position: handleOutsidePosition,
 			delay: handleOutsideDelay,
 			easing: 'easeIn'
