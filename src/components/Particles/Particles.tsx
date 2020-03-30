@@ -7,7 +7,7 @@ const Particles = () => {
   useEffect(() => {
     const circles = ref.current?.querySelectorAll?.('circle') || [];
     Array.from(circles).forEach((circle, index) => {
-      circle.animate(
+      circle.animate?.(
         [
           {
             transform: 'rotate(0)',
