@@ -11,11 +11,11 @@ import iconLinkedIn from '@fortawesome/fontawesome-free/svgs/brands/linkedin.svg
 import iconBlog from '@fortawesome/fontawesome-free/svgs/solid/feather-alt.svg';
 
 const App = () => (
-  <main className="relative min-h-screen bg-white flex flex-col justify-center items-center">
-    <div className="absolute">
+  <main className="min-h-screen bg-white flex flex-col justify-center items-center">
+    <div className="relative py-24">
       <Particles />
+      <ProfileImage />
     </div>
-    <ProfileImage />
     <h1 className="mt-8 font-bold text-xl">Julia Rechkunova</h1>
     <p className="mt-2 text-gray-700">Software Engineer</p>
     <SocialLinks>

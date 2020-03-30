@@ -1,24 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import './Particles.css';
 
 const Particles = () => {
+  const ref = useRef<SVGSVGElement>(null);
+
   useEffect(() => {
-    const circles = window.document.querySelectorAll('circle');
+    const circles = ref.current?.querySelectorAll?.('circle') || [];
     Array.from(circles).forEach((circle, index) => {
-      // circle.setAttribute('cy', circle.getAttribute('data-cy') || '0');
       circle.animate(
         [
           {
-            transform: 'translateY(0)',
+            transform: 'rotate(0)',
+            opacity: 0,
           },
           {
-            transform: `translateY(${circle.getAttribute('data-y') || '0'}px)`,
+            transform: 'rotate(390deg)',
+          },
+          {
+            transform: 'rotate(360deg)',
+            opacity: 1,
           },
         ],
         {
-          duration: 1000 + Math.random() * 1000,
-          endDelay: 3000,
-          easing: 'ease-in',
-          delay: index * 15,
+          duration: 1500 + Math.random() * 1000,
+          delay: 1000 + Math.random() * 1000,
+          easing: 'ease-in-out',
           fill: 'forwards',
         }
       );
@@ -27,11 +33,13 @@ const Particles = () => {
 
   return (
     <svg
+      ref={ref}
       xmlns="http://www.w3.org/2000/svg"
       width="600"
       height="600"
       viewBox="0 0 600 600"
       version="1.1"
+      className="particles absolute pointer-events-none"
     >
       <g
         id="layers"
@@ -46,8 +54,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#AE8CBC"
             cx="172"
-            cy="0"
-            data-y="379"
+            cy="379"
             r="25"
           />
           <circle
@@ -55,8 +62,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EB6F7C"
             cx="156.5"
-            cy="0"
-            data-y="316.5"
+            cy="316.5"
             r="22.5"
           />
           <circle
@@ -64,8 +70,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#A5CE52"
             cx="288"
-            cy="0"
-            data-y="159"
+            cy="159"
             r="15"
           />
           <circle
@@ -73,8 +78,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#A5CE52"
             cx="252.5"
-            cy="0"
-            data-y="158.5"
+            cy="158.5"
             r="22.5"
           />
           <circle
@@ -82,8 +86,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="237"
-            cy="0"
-            data-y="485"
+            cy="485"
             r="25"
           />
           <circle
@@ -91,8 +94,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#F7EF4A"
             cx="171.5"
-            cy="0"
-            data-y="154.5"
+            cy="154.5"
             r="27.5"
           />
           <circle
@@ -100,8 +102,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="371"
-            cy="0"
-            data-y="437"
+            cy="437"
             r="30"
           />
           <circle
@@ -109,8 +110,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EB6F7C"
             cx="473"
-            cy="0"
-            data-y="257"
+            cy="257"
             r="25"
           />
           <circle
@@ -118,8 +118,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#8FBBE6"
             cx="406"
-            cy="0"
-            data-y="374"
+            cy="374"
             r="5"
           />
           <circle
@@ -127,8 +126,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#AE8CBC"
             cx="131"
-            cy="0"
-            data-y="352"
+            cy="352"
             r="30"
           />
           <circle
@@ -136,8 +134,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#8FBBE6"
             cx="122"
-            cy="0"
-            data-y="447"
+            cy="447"
             r="10"
           />
           <circle
@@ -145,8 +142,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#AE8CBC"
             cx="177"
-            cy="0"
-            data-y="333"
+            cy="333"
             r="5"
           />
           <circle
@@ -154,8 +150,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EF8C52"
             cx="424"
-            cy="0"
-            data-y="260"
+            cy="260"
             r="5"
           />
           <circle
@@ -163,8 +158,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#8FBBE6"
             cx="384"
-            cy="0"
-            data-y="479"
+            cy="479"
             r="10"
           />
           <circle
@@ -172,8 +166,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EB6F7C"
             cx="452"
-            cy="0"
-            data-y="301"
+            cy="301"
             r="25"
           />
           <circle
@@ -181,8 +174,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="288"
-            cy="0"
-            data-y="430"
+            cy="430"
             r="5"
           />
           <circle
@@ -190,8 +182,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#8FBBE6"
             cx="162"
-            cy="0"
-            data-y="444"
+            cy="444"
             r="25"
           />
           <circle
@@ -199,8 +190,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="289"
-            cy="0"
-            data-y="468"
+            cy="468"
             r="30"
           />
           <circle
@@ -208,8 +198,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#AE8CBC"
             cx="484"
-            cy="0"
-            data-y="371"
+            cy="371"
             r="15"
           />
           <circle
@@ -217,8 +206,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#AE8CBC"
             cx="126"
-            cy="0"
-            data-y="401"
+            cy="401"
             r="25"
           />
           <circle
@@ -226,8 +214,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#F7EF4A"
             cx="409"
-            cy="0"
-            data-y="145"
+            cy="145"
             r="25"
           />
           <circle
@@ -235,8 +222,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#AE8CBC"
             cx="493"
-            cy="0"
-            data-y="319"
+            cy="319"
             r="25"
           />
           <circle
@@ -244,8 +230,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#A5CE52"
             cx="347"
-            cy="0"
-            data-y="118"
+            cy="118"
             r="25"
           />
           <circle
@@ -253,8 +238,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EF8C52"
             cx="437"
-            cy="0"
-            data-y="270"
+            cy="270"
             r="15"
           />
           <circle
@@ -262,8 +246,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#8FBBE6"
             cx="410"
-            cy="0"
-            data-y="408"
+            cy="408"
             r="30"
           />
           <circle
@@ -271,8 +254,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#8FBBE6"
             cx="427"
-            cy="0"
-            data-y="374"
+            cy="374"
             r="10"
           />
         </g>
@@ -282,8 +264,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="245"
-            cy="0"
-            data-y="446"
+            cy="446"
             r="30"
           />
           <circle
@@ -291,8 +272,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#AE8CBC"
             cx="450"
-            cy="0"
-            data-y="345"
+            cy="345"
             r="30"
           />
           <circle
@@ -300,8 +280,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#AE8CBC"
             cx="453"
-            cy="0"
-            data-y="395"
+            cy="395"
             r="25"
           />
           <circle
@@ -309,8 +288,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#F7EF4A"
             cx="195"
-            cy="0"
-            data-y="207"
+            cy="207"
             r="15"
           />
           <circle
@@ -318,8 +296,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#A5CE52"
             cx="339"
-            cy="0"
-            data-y="168"
+            cy="168"
             r="10"
           />
           <circle
@@ -327,8 +304,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#8FBBE6"
             cx="158"
-            cy="0"
-            data-y="409"
+            cy="409"
             r="10"
           />
           <circle
@@ -336,8 +312,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#A5CE52"
             cx="282"
-            cy="0"
-            data-y="126"
+            cy="126"
             r="25"
           />
           <circle
@@ -345,8 +320,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#CEDE5A"
             cx="366"
-            cy="0"
-            data-y="165"
+            cy="165"
             r="25"
           />
           <circle
@@ -354,8 +328,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EB6F7C"
             cx="494"
-            cy="0"
-            data-y="282"
+            cy="282"
             r="20"
           />
           <circle
@@ -363,8 +336,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="355"
-            cy="0"
-            data-y="476"
+            cy="476"
             r="25"
           />
           <circle
@@ -372,8 +344,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#A5CE52"
             cx="255"
-            cy="0"
-            data-y="97"
+            cy="97"
             r="10"
           />
           <circle
@@ -381,8 +352,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="275"
-            cy="0"
-            data-y="508"
+            cy="508"
             r="10"
           />
           <circle
@@ -390,8 +360,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#AE8CBC"
             cx="419"
-            cy="0"
-            data-y="352"
+            cy="352"
             r="5"
           />
           <circle
@@ -399,8 +368,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EF8C52"
             cx="192"
-            cy="0"
-            data-y="227"
+            cy="227"
             r="5"
           />
           <circle
@@ -408,8 +376,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#A5CE52"
             cx="222"
-            cy="0"
-            data-y="126"
+            cy="126"
             r="25"
           />
           <circle
@@ -417,8 +384,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="275"
-            cy="0"
-            data-y="435"
+            cy="435"
             r="10"
           />
           <circle
@@ -426,8 +392,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="340"
-            cy="0"
-            data-y="425"
+            cy="425"
             r="5"
           />
           <circle
@@ -435,8 +400,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#8FBBE6"
             cx="195"
-            cy="0"
-            data-y="479"
+            cy="479"
             r="20"
           />
           <circle
@@ -444,8 +408,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="323"
-            cy="0"
-            data-y="487"
+            cy="487"
             r="15"
           />
           <circle
@@ -453,8 +416,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EB6F7C"
             cx="110"
-            cy="0"
-            data-y="299"
+            cy="299"
             r="25"
           />
           <circle
@@ -462,8 +424,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="223"
-            cy="0"
-            data-y="412"
+            cy="412"
             r="10"
           />
           <circle
@@ -471,8 +432,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#F7EF4A"
             cx="410"
-            cy="0"
-            data-y="193"
+            cy="193"
             r="30"
           />
           <circle
@@ -480,8 +440,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EF8C52"
             cx="110"
-            cy="0"
-            data-y="240"
+            cy="240"
             r="25"
           />
           <circle
@@ -489,8 +448,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#D8E57B"
             cx="215"
-            cy="0"
-            data-y="177"
+            cy="177"
             r="25"
           />
           <circle
@@ -498,8 +456,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EF8C52"
             cx="123"
-            cy="0"
-            data-y="200"
+            cy="200"
             r="15"
           />
           <circle
@@ -507,8 +464,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#AE8CBC"
             cx="178"
-            cy="0"
-            data-y="357"
+            cy="357"
             r="10"
           />
           <circle
@@ -516,8 +472,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EB6F7C"
             cx="433"
-            cy="0"
-            data-y="318"
+            cy="318"
             r="10"
           />
         </g>
@@ -527,8 +482,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="324.5"
-            cy="0"
-            data-y="446.5"
+            cy="446.5"
             r="22.5"
           />
           <circle
@@ -536,8 +490,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EF8C52"
             cx="167.5"
-            cy="0"
-            data-y="238.5"
+            cy="238.5"
             r="22.5"
           />
           <circle
@@ -545,8 +498,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#A5CE52"
             cx="379"
-            cy="0"
-            data-y="187"
+            cy="187"
             r="10"
           />
           <circle
@@ -554,8 +506,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EF8C52"
             cx="431"
-            cy="0"
-            data-y="233"
+            cy="233"
             r="25"
           />
           <circle
@@ -563,8 +514,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#8FBBE6"
             cx="198"
-            cy="0"
-            data-y="413"
+            cy="413"
             r="25"
           />
           <circle
@@ -572,8 +522,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EB6F7C"
             cx="149"
-            cy="0"
-            data-y="273"
+            cy="273"
             r="30"
           />
           <circle
@@ -581,8 +530,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#A5CE52"
             cx="377"
-            cy="0"
-            data-y="117"
+            cy="117"
             r="10"
           />
           <circle
@@ -590,8 +538,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#A5CE52"
             cx="310"
-            cy="0"
-            data-y="101"
+            cy="101"
             r="15"
           />
           <circle
@@ -599,8 +546,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#8FBBE6"
             cx="415"
-            cy="0"
-            data-y="366"
+            cy="366"
             r="10"
           />
           <circle
@@ -608,8 +554,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#8FBBE6"
             cx="202"
-            cy="0"
-            data-y="446"
+            cy="446"
             r="15"
           />
           <circle
@@ -617,8 +562,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EF8C52"
             cx="91"
-            cy="0"
-            data-y="264"
+            cy="264"
             r="10"
           />
           <circle
@@ -626,8 +570,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#AE8CBC"
             cx="166"
-            cy="0"
-            data-y="345"
+            cy="345"
             r="10"
           />
           <circle
@@ -635,8 +578,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EF8C52"
             cx="429"
-            cy="0"
-            data-y="287"
+            cy="287"
             r="5"
           />
           <circle
@@ -644,8 +586,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#AE8CBC"
             cx="178"
-            cy="0"
-            data-y="342"
+            cy="342"
             r="5"
           />
           <circle
@@ -653,8 +594,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#F7EF4A"
             cx="464"
-            cy="0"
-            data-y="210"
+            cy="210"
             r="25"
           />
           <circle
@@ -662,8 +602,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="300"
-            cy="0"
-            data-y="435"
+            cy="435"
             r="10"
           />
           <circle
@@ -671,8 +610,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#7BCAEC"
             cx="379"
-            cy="0"
-            data-y="404"
+            cy="404"
             r="5"
           />
           <circle
@@ -680,8 +618,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#F7EF4A"
             cx="456"
-            cy="0"
-            data-y="166"
+            cy="166"
             r="25"
           />
           <circle
@@ -689,8 +626,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#8FBBE6"
             cx="452"
-            cy="0"
-            data-y="431"
+            cy="431"
             r="15"
           />
           <circle
@@ -698,8 +634,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#F7EF4A"
             cx="116"
-            cy="0"
-            data-y="168"
+            cy="168"
             r="15"
           />
           <circle
@@ -707,8 +642,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#A5CE52"
             cx="321"
-            cy="0"
-            data-y="149"
+            cy="149"
             r="25"
           />
           <circle
@@ -716,8 +650,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#EB6F7C"
             cx="503"
-            cy="0"
-            data-y="233"
+            cy="233"
             r="10"
           />
           <circle
@@ -725,8 +658,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#8FBBE6"
             cx="419"
-            cy="0"
-            data-y="459"
+            cy="459"
             r="30"
           />
           <circle
@@ -734,8 +666,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#F7EF4A"
             cx="160"
-            cy="0"
-            data-y="203"
+            cy="203"
             r="25"
           />
           <circle
@@ -743,8 +674,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#F7EF4A"
             cx="137"
-            cy="0"
-            data-y="234"
+            cy="234"
             r="10"
           />
           <circle
@@ -752,8 +682,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#AE8CBC"
             cx="195"
-            cy="0"
-            data-y="384"
+            cy="384"
             r="10"
           />
           <circle
@@ -761,8 +690,7 @@ const Particles = () => {
             fillOpacity="0.8"
             fill="#F7EF4A"
             cx="215"
-            cy="0"
-            data-y="205"
+            cy="205"
             r="5"
           />
         </g>
