@@ -2,6 +2,7 @@ import React from 'react';
 import ProfileImage from '../ProfileImage/ProfileImage';
 import SocialLinks from '../SocialLinks/SocialLinks';
 import SocialLink from '../SocialLink/SocialLink';
+import Particles from '../Particles/Particles';
 
 import iconCodepen from '@fortawesome/fontawesome-free/svgs/brands/codepen.svg';
 import iconGithub from '@fortawesome/fontawesome-free/svgs/brands/github.svg';
@@ -10,7 +11,10 @@ import iconLinkedIn from '@fortawesome/fontawesome-free/svgs/brands/linkedin.svg
 import iconBlog from '@fortawesome/fontawesome-free/svgs/solid/feather-alt.svg';
 
 const App = () => (
-  <main className="min-h-screen bg-white flex flex-col justify-center items-center">
+  <main className="relative min-h-screen bg-white flex flex-col justify-center items-center">
+    <div className="absolute">
+      <Particles />
+    </div>
     <ProfileImage />
     <h1 className="mt-8 font-bold text-xl">Julia Rechkunova</h1>
     <p className="mt-2 text-gray-700">Software Engineer</p>
