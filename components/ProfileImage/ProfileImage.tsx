@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const ProfileImage = () => (
   <img
@@ -6,6 +6,6 @@ const ProfileImage = () => (
     alt="@jughosta"
     className="h-56 w-56 rounded-full bg-gray-300 text-center"
   />
-);
+)
 
-export default ProfileImage;
+export default ProfileImage
