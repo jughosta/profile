@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://jughosta.com",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "gh-pages": "^2.2.0",
     "next": "^11.1.2",
     "react": "^17.0.2",
@@ -12,8 +12,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && next export",
     "lint": "next lint",
     "test": "jest",
     "predeploy": "yarn build",
