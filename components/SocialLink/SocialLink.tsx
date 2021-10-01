@@ -11,7 +11,7 @@ interface IProps {
 const SocialLink: React.FC<IProps> = ({ name, url, icon }) => {
   return (
     <a href={url} title={name} target="_blank" rel="noopener noreferrer">
-      <img src={icon.src} alt={name} className="h-5 w-5" />
+      <img src={`.${icon.src}`} alt={name} className="h-5 w-5" />
     </a>
   )
 }
